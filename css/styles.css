@@ -1,0 +1,247 @@
+:root {
+  --Soft-Cyan: hsl(174, 77%, 80%);
+  --Strong-Cyan: hsl(174, 86%, 45%);
+  --Light-Grayish-Red: hsl(14, 92%, 95%);
+  --Light-Red: hsl(15, 100%, 70%);
+  --Pale-Blue: hsl(226, 100%, 87%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Pale-Blue: hsl(230, 100%, 99%);
+  --Light-Grayish-Blue: hsl(224, 65%, 95%);
+  --Light-Grayish-Blue: hsl(223, 50%, 87%);
+  --Grayish-Blue: hsl(225, 20%, 60%);
+  --Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.938rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/bg-pattern.svg');
+  background-repeat: no-repeat;
+}
+
+.header {
+  padding: 3.125rem 0;
+  text-align: center;
+  background-image: url('/images/pattern-circles.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header h1 {
+  color: var(--Dark-Desaturated-Blue);
+  font-size: 1.875rem;
+  margin-bottom: 0.938rem;
+}
+
+.header p {
+  color: var(--Grayish-Blue);
+  font-size: 0.938rem;
+}
+
+.card {
+  background-color: var(--White);
+  padding: 3.125rem 1.875rem;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0px 15px hsl(227, 25%, 85%);
+  color: var(--Grayish-Blue);
+  min-width: 31.25rem;
+  margin-top: 0.938rem;
+}
+
+.tarrif {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.125rem;
+  /* justify-items: center; */
+  align-items: center;
+}
+
+.pageviews {
+  text-transform: uppercase;
+}
+
+.price-per-month {
+  justify-self: end;
+  grid-column: 2 / 4;
+}
+
+.price {
+  color: var(--Dark-Desaturated-Blue);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+#views-input {
+  width: 100%;
+  appearance: none;
+  background-color: var(--Soft-Cyan);
+  border-radius: 0.313rem;
+  height: 0.625rem;
+  outline: none;
+  grid-column: 1 / 4;
+}
+
+/* customização do cursor da barra */
+#views-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 2.188rem;
+  height: 2.188rem;
+  background-image: url('/images/icon-slider.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: var(--Strong-Cyan);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#views-input::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 10px var(--Strong-Cyan);
+}
+
+.switch-period {
+  margin-top: 1.875rem;
+  font-size: 0.813rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  position: relative;
+}
+
+.year-discount {
+  padding: 0.188rem 0.313rem;
+  background-color: var(--Light-Grayish-Red);
+  color: var(--Light-Red);
+  border-radius: 0.313rem;
+  margin-right: 1rem;
+}
+
+.switch-btn {
+  position: relative;
+  display: inline-block;
+  background-color: var(--Grayish-Blue);
+  cursor: pointer;
+  height: 1.25rem;
+  width: 2.5rem;
+  border-radius: 1.25rem;
+  transition: all 0.5s;
+}
+
+.switch-btn.green {
+  background-color: var(--Soft-Cyan);
+}
+
+.switch-btn input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+}
+
+/* botão switch */
+.switch-btn .switch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--White);
+  top: 2px;
+  left: 1px;
+  transition: all 0.5s;
+}
+
+.switch-btn input:checked + .switch {
+  transform: translateX(18px);
+}
+
+hr {
+  border: 1px solid hsl(0, 0%, 98%);
+  margin-block: 1.875rem;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.features-list {
+  list-style-image: url('/images/icon-check.svg');
+  margin-left: 1.25rem;
+  line-height: 1.5625rem;
+}
+
+.start {
+  background-color: var(--Dark-Desaturated-Blue);
+  color: var(--White);
+  border: none;
+  width: 11.25rem;
+  height: 2.8125rem;
+  border-radius: 1.375rem;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .header {
+    margin-top: 4.375rem;
+  }
+
+  .card {
+    min-width: 23.438rem;
+    padding: 3.125rem 1.875rem;
+    margin-bottom: 3.125rem;
+  }
+
+  .tarrif  {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 1.25rem
+  }
+
+  .pageviews {
+    order: 1;
+  }
+
+  #views-input {
+    order: 2;
+  }
+
+  .price-per-month {
+    order: 3;
+  }
+
+  .price {
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 1.875rem;
+  }
+}
